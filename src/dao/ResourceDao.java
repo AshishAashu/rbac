@@ -31,6 +31,7 @@ public abstract class ResourceDao {
 			while(rs.next()) {
 				resources.add(Resource.mapResource(rs.getInt(1), rs.getString(2)));
 			}
+			st.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -51,6 +52,7 @@ public abstract class ResourceDao {
 			if(rs.next()) {
 				resource = Resource.mapResource(rs.getInt(1), rs.getString(2));
 			}
+			st.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

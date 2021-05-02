@@ -49,6 +49,7 @@ public class Action extends ActionDao {
 			PreparedStatement pst = conn.prepareStatement("insert into " + TB_NAME +" (name) values (?)");
 			pst.setString(1, this.getName());
 			if(pst.executeUpdate() > 0) {
+				pst.close();
 				return true;
 			}
 		}catch(SQLException ex) {

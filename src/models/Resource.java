@@ -54,6 +54,7 @@ public class Resource extends ResourceDao{
 			PreparedStatement pst = conn.prepareStatement("insert into "+ TB_NAME +" (name) values (?)");
 			pst.setString(1, this.getName());
 			if(pst.executeUpdate() > 0) {
+				pst.close();
 				return true;
 			}
 		}catch(SQLException ex) {
@@ -78,6 +79,7 @@ public class Resource extends ResourceDao{
 			while(rs.next()) {
 				permitRoleIds.add(rs.getInt(1));
 			}
+			st.close();
 		} catch (SQLException e) {
 			// TODO: handle exception
 		}

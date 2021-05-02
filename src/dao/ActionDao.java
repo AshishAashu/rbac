@@ -32,6 +32,7 @@ public abstract class ActionDao {
 			while(rs.next()) {
 				actions.add(Action.mapAction(rs.getInt(1), rs.getString(2)));
 			}
+			st.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -52,6 +53,7 @@ public abstract class ActionDao {
 			if(rs.next()) {
 				actionExists = true;
 			}
+			st.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -72,6 +74,7 @@ public abstract class ActionDao {
 			while(rs.next()) {
 				action = Action.mapAction(rs.getInt(1), rs.getString(2));
 			}
+			st.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

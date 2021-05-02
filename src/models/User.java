@@ -109,6 +109,7 @@ public class User extends UserDao {
 					userRoles.add(role);
 				}
 			}
+			st.close();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}

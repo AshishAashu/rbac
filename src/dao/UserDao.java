@@ -33,6 +33,7 @@ public abstract class UserDao {
 			if(rs.next()) {
 				admin = User.mapUser(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
 			}
+			st.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -52,6 +53,7 @@ public abstract class UserDao {
 			while(rs.next()) {
 				users.add(User.mapUser(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4)));
 			}
+			st.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -70,6 +72,7 @@ public abstract class UserDao {
 			if(rs.next()) {
 				user = User.mapUser(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
 			}
+			st.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -90,6 +93,7 @@ public abstract class UserDao {
 					haveRole = true;
 				}
 			}
+			st.close();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}

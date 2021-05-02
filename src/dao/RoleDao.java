@@ -32,6 +32,7 @@ public abstract class RoleDao {
 			while(rs.next()) {
 				roles.add(Role.mapRole(rs.getInt(1), rs.getString(2)));
 			}
+			st.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -52,6 +53,7 @@ public abstract class RoleDao {
 			if(rs.next()) {
 				role = Role.mapRole(rs.getInt(1), rs.getString(2));
 			}
+			st.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -73,6 +75,7 @@ public abstract class RoleDao {
 					return true;
 				}
 			}
+			st.close();
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}

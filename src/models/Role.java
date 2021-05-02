@@ -49,6 +49,7 @@ public class Role extends RoleDao {
 			PreparedStatement pst = conn.prepareStatement("insert into roles (name) values (?)");
 			pst.setString(1, this.getName());
 			if(pst.executeUpdate() > 0) {
+				pst.close();
 				return true;
 			}
 		}catch(SQLException ex) {
